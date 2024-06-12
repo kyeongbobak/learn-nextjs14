@@ -1,14 +1,15 @@
 import { Suspense } from "react";
+import MovieInfo from "../../../../../components/movie-info";
+import MovieVideos from "../../../../../components/movie-videos";
 
-import MovieInfo from "../../../../components/movie-info";
-import MovieVideos from "../../../../components/movie-videos";
+export const metadata = {
+  title: "Home",
+};
 
-export default async function MoviesDetail(props) {
-  const { params, searchParams } = props;
+export default function MoviesDetail(props) {
+  const { params } = props;
+  metadata.title = params.movietitle.replace(/[^a-zA-Z]/g, "");
 
-  console.log(props.params);
-  // console.log(params.id);
-  // console.log(searchParams);
   return (
     <>
       <Suspense fallback={<h1>Loading MovieInfo</h1>}>
