@@ -6,8 +6,9 @@ import MovieVideos from "../../../../components/movie-videos";
 export default async function MoviesDetail(props) {
   const { params, searchParams } = props;
 
-  console.log(searchParams);
-
+  console.log(props.params);
+  // console.log(params.id);
+  // console.log(searchParams);
   return (
     <>
       <Suspense fallback={<h1>Loading MovieInfo</h1>}>
