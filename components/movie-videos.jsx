@@ -1,4 +1,5 @@
 import { API_URL } from "../app/(home)/page";
+import styles from "../styles/movievideo.module.css";
 
 async function getVideos(id) {
   // console.log(`Fetching movie with id: ${id} at ${Date.now()}`);
@@ -11,5 +12,12 @@ async function getVideos(id) {
 //  일단 아래 {id} 가 원인
 export default async function MovieVideos({ id }) {
   const videos = await getVideos(id);
-  return <h6>{JSON.stringify(videos)}</h6>;
+  // <h6>{JSON.stringify(videos)}</h6>
+  return (
+    <div className={styles.container}>
+      {videos.map((video) => (
+        <iframe key={video.id} src={`https://youtube.com/embed/${video.key}`} title={video.name} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
+      ))}
+    </div>
+  );
 }
