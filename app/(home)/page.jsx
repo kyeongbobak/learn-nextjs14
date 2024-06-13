@@ -23,7 +23,7 @@ export default async function HomePage() {
           <Link href={`movies/${movie.id}/${movie.title}`}>{movie.title}</Link>
         </li>
       ))}
-      <div>{JSON.stringify(movies)}</div>
+      {/* <div>{JSON.stringify(movies)}</div> */}
     </div>
   );
 }
