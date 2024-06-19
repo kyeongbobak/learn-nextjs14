@@ -4,6 +4,7 @@ import MovieInfo, { getMovie } from "../../../../../components/movie-info";
 
 export async function generateMetadata({ params }) {
   const { id } = params;
+
   const movie = await getMovie({ id });
   return {
     title: movie.title,
