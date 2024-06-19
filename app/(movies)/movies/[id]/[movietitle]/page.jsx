@@ -1,22 +1,23 @@
 import { Suspense } from "react";
-import MovieInfo from "../../../../../components/movie-info";
 import MovieVideos from "../../../../../components/movie-videos";
+import MovieInfo, { getMovie } from "../../../../../components/movie-info";
 
-export const metadata = {
-  title: "Home",
-};
+export async function generateMetadata({ params }) {
+  const { id } = params;
+  const movie = await getMovie({ id });
+  return {
+    title: movie.title,
+  };
+}
 
-export default function MoviesDetail(props) {
-  const { params } = props;
-  metadata.title = params.movietitle.replace(/[^a-zA-Z]/g, "");
-
+export default function MoviesDetail({ params }) {
   return (
     <>
       <Suspense fallback={<h1>Loading MovieInfo</h1>}>
-        <MovieInfo id={params.id}></MovieInfo>
+        <MovieInfo id={params.id} />
       </Suspense>
       <Suspense fallback={<h1>Loading MovieVideo</h1>}>
-        <MovieVideos id={params.id}></MovieVideos>
+        <MovieVideos id={params.id} />
       </Suspense>
     </>
   );
