@@ -1,10 +1,10 @@
 import { Suspense } from "react";
 import MovieVideos from "../../../../../components/movie-videos";
 import MovieInfo, { getMovie } from "../../../../../components/movie-info";
+import MovieCredit from "../../../../../components/movie-credits";
 
 export async function generateMetadata({ params }) {
   const { id } = params;
-
   const movie = await getMovie({ id });
   return {
     title: movie.title,
@@ -19,6 +19,9 @@ export default function MoviesDetail({ params }) {
       </Suspense>
       <Suspense fallback={<h1>Loading MovieVideo</h1>}>
         <MovieVideos id={params.id} />
+      </Suspense>
+      <Suspense fallback={<h1>Loading MovieCredit</h1>}>
+        <MovieCredit id={params.id} />
       </Suspense>
     </>
   );

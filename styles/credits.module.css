@@ -1,0 +1,21 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.credit {
+  place-self: center;
+}
+
+.profileimage {
+  border-radius: 20px;
+  padding-bottom: 20px;
+}
+
+.description {
+  padding-bottom: 5px;
+  font-weight: bold;
+}
