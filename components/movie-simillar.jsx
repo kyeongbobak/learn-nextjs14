@@ -2,14 +2,12 @@ import { API_URL } from "../app/constants";
 import styles from "../styles/simillar.module.css";
 
 // useclient를 쓰려면, api 분리해야됌
-
 export async function getSimillars({ id }) {
   const res = await fetch(`${API_URL}/${id}/similar`);
   return await res.json();
 }
 
 export default async function MovieSimillars({ id }) {
-  await new Promise((resolve) => setTimeout(resolve, 5000));
   const simillars = await getSimillars({ id });
 
   console.log(simillars);

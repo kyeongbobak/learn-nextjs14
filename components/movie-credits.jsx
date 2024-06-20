@@ -10,8 +10,6 @@ export async function getCredits({ id }) {
 
 // 아래 params 중괄호 문제
 // { params }는 주어진 객체 { params: { id: '823464' }, searchParams: {} }에서 params라는 속성을 구조 분해하여 추출합니다. 따라서 params 변수는 { id: '823464' }와 같은 객체가 됩니다.
-
-// 추출 개념에 대해서 다시 이해해보기 ???????/
 export default async function MovieCredit({ id }) {
   const credits = await getCredits({ id });
 
