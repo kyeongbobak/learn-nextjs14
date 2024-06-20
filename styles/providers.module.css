@@ -1,0 +1,24 @@
+.section {
+  width: 80%;
+  margin: 100px auto;
+}
+
+.title {
+  font-weight: bold;
+  margin: 100px 0 20px 0;
+}
+
+.contentsWrapper {
+  display: flex;
+  gap: 15px;
+}
+
+.providerImage {
+  width: 100px;
+}
+
+.providerName {
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+}

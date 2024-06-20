@@ -2,9 +2,8 @@ import { API_URL } from "../app/constants";
 import styles from "../styles/credits.module.css";
 
 export async function getCredits({ id }) {
-  console.log(id);
   // console.log(`Fetching movie with id: ${id} at ${Date.now()}`);
-  await new Promise((resolve) => setTimeout(resolve, 5000));
+  // await new Promise((resolve) => setTimeout(resolve, 5000));
   const res = await fetch(`${API_URL}/${id}/credits`);
   return await res.json();
 }
@@ -17,14 +16,21 @@ export default async function MovieCredit({ id }) {
   const credits = await getCredits({ id });
 
   return (
-    <div className={styles.container}>
-      {credits.map((credit) => (
-        <div className={styles.credit} key={credit.id}>
-          <img className={styles.profileimage} src={credit.profile_path} alt="profile" />
-          <p className={styles.description}>{credit.name}</p>
-          <p>{credit.character}</p>
+    <>
+      <div className={styles.section}>
+        <h3 className={styles.title}>Actor</h3>
+        <div className={styles.contentsWrapper}>
+          {credits.map((credit) => (
+            <div className={styles.contents} key={credit.id}>
+              <img className={styles.actorImage} src={credit.profile_path} alt="profile" />
+              <div className={styles.description}>
+                <p className={styles.actorCharacter}>{credit.character}</p>
+                <p className={styles.actorName}>{credit.name}</p>
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
+      </div>
+    </>
   );
 }

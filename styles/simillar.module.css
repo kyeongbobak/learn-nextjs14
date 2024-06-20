@@ -1,11 +1,11 @@
 .section {
   width: 80%;
-  margin: 0 auto;
+  margin: 100px auto;
 }
 
 .title {
   font-weight: bold;
-  margin-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 .contentsWrapper {
@@ -15,29 +15,22 @@
 
 .contents {
   flex: 0 0 auto;
-  width: 200px;
+  width: 300px;
   margin-right: 2rem;
-  background-color: white;
   border-radius: 10px;
+  background-color: white;
 }
 
-.actorImage {
+.posterImage {
   width: 100%;
-  border-radius: 10px;
 }
 
 .description {
-  color: black;
   padding: 10px;
+  color: black;
 }
 
-.actorName {
-  margin-top: 10px;
+.movieName {
   padding-bottom: 5px;
   font-weight: bold;
-  font-size: 12px;
-}
-
-.actorCharacter {
-  font-size: 15px;
 }

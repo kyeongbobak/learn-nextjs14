@@ -14,7 +14,7 @@ export default async function MovieInfo({ id }) {
   // <h6>{JSON.stringify(movie)}</h6>
   return (
     <>
-      <div className={styles.container}>
+      <div className={styles.section}>
         <img className={styles.poster} src={movie.poster_path} />
         <div className={styles.info}>
           <h1 className={styles.title}>{movie.title}</h1>
